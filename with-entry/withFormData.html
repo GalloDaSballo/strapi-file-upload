@@ -1,0 +1,25 @@
+<!-- Credits: From Strapi Documentation -->
+<form>
+    <!-- Can be multiple files -->
+    <input type="file" name="files" />
+
+    <input type="text" name="ref" value="withimage" />
+    <input type="text" name="refId" value="1" />
+    <input type="text" name="field" value="thumbnail" />
+    
+    <input type="submit" value="Submit" />
+  </form>
+
+  <script type="text/javascript">
+    const formElement = document.querySelector('form');
+
+    formElement.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const request = new XMLHttpRequest();
+
+      request.open('POST', 'http://localhost:1337/upload');
+
+      request.send(new FormData(formElement));
+    });
+  </script>

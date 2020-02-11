@@ -1,0 +1,32 @@
+<form id="uploadForm">
+    <!-- Can be multiple files -->
+    <input type="file" name="files" id="file"/>
+    <input type="submit" value="Submit" />
+  </form>
+
+  <script type="text/javascript">
+  /**
+   * Credits to https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+   */
+  const form = document.querySelector('#uploadForm')
+  form.onsubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    const fileField = document.querySelector('#file');
+
+    formData.append('files', fileField.files[0]);
+
+    fetch('http://localhost:1337/upload', {
+      method: 'POST',
+      body: formData
+    })
+    .then((response) => response.json())
+    .then((result) => {
+      console.log('Success:', result);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+  </script>

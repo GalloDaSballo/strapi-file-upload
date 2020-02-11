@@ -1,0 +1,30 @@
+<form id="multipleFileForm">
+  <input type="file" id="files" multiple />
+  <input type="submit" />
+</form>
+<script>
+  //Credits to https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+  const multipleFileForm = document.querySelector('#multipleFileForm')
+  multipleFileForm.onsubmit = (e) => {
+    e.preventDefault()
+    const files = document.querySelector('#files')
+    const formData = new FormData();
+
+    for (let i = 0; i < files.files.length; i++) {
+      formData.append('files', files.files[i]);
+    }
+
+    fetch('http://localhost:1337/upload', {
+      method: 'POST',
+      body: formData,
+    })
+    .then((response) => response.json())
+    .then((result) => {
+      console.log('Success:', result);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+
+</script>
