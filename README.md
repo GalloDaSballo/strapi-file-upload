@@ -1,4 +1,4 @@
-# Strapi File Upload Examples
+## Strapi File Upload Examples
 
 Example on how to perform file Upload
 
