@@ -13,7 +13,7 @@ Available on Podia: SOON
 And on Udemy: https://www.udemy.com/course/the-complete-strapi-course/?couponCode=STRAPI_LAUNCH_DATE
 
 
-## How to Install it
+## How to Install it
 
 Either download as zip
 or
