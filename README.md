@@ -7,12 +7,14 @@ Example on how to perform file Upload
 - With Entry: 
 
 ## Learn More
+
 The files are part of The Complete Strapi Course
 Available on Podia: SOON
 And on Udemy: https://www.udemy.com/course/the-complete-strapi-course/?couponCode=STRAPI_LAUNCH_DATE
 
 
 ## How to Install it
+
 Either download as zip
 or
 - Open the terminal
